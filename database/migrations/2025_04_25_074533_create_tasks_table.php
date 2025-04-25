@@ -16,8 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->enum('status', TaskStatus::values())
-                ->default(TaskStatus::PENDING);
+            $table->string('status')->default(TaskStatus::PENDING->value);
             $table->timestamps();
         });
     }

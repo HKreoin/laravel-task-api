@@ -8,11 +8,8 @@ enum TaskStatus: string
     case IN_PROGRESS = 'in_progress';
     case COMPLETED = 'completed';
 
-    public static function values(): array {
-        return [
-            self::PENDING,
-            self::IN_PROGRESS,
-            self::COMPLETED,
-        ];
+    public static function values(): array
+    {
+        return array_map(fn($case) => $case->value, self::cases());
     }
 }
